@@ -27,6 +27,10 @@ jobs:
       - uses: actions/checkout@v2
       - run: echo "${HOME}/.local/bin" >> $GITHUB_PATH
       - run: aws s3 sync dist s3://${{ secrets.AWS_S3_BUCKET_NAME }}/container/latest
+      - run: echo "$?"
+      - run: echo "$lastexitcode"
+      - run: echo "%errorlevel%"
+
         env:
           AWS_EC2_METADATA_DISABLED: 'true'
           ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
