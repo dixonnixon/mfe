@@ -24,7 +24,7 @@ jobs:
           ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
 
       # - uses: chrislennon/action-aws-cli@v1.1
-      - uses: actions/action-aws-cli@v1.1
+      - uses: actions/checkout@v2
       - run: echo "${HOME}/.local/bin" >> $GITHUB_PATH
       - run: aws s3 sync dist s3://${{ secrets.AWS_S3_BUCKET_NAME }}/container/latest
         env:
