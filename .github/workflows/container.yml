@@ -21,7 +21,7 @@ jobs:
       - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
       - name: Check out repository code
 
-      - uses: actions/checkout@v2
+        uses: actions/checkout@v2
       - run: npm install
       - run: npm run build
 
