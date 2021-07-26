@@ -25,12 +25,15 @@ jobs:
 
       # - uses: chrislennon/action-aws-cli@v1.1
       - uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: af-south-1
       - run: echo "${HOME}/.local/bin" >> $GITHUB_PATH
       - run: aws s3 sync dist s3://${{ secrets.AWS_S3_BUCKET_NAME }}/container/latest
       - run: echo "$?"
       - run: echo "$lastexitcode"
       - run: echo "%errorlevel%"
-
         env:
           AWS_EC2_METADATA_DISABLED: 'true'
           ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
