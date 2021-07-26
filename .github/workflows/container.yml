@@ -42,7 +42,7 @@ jobs:
           aws-region: eu-north-1
       
       - run: aws cloudfront create-invalidation --distribution-id ${{ secrets.AWS_DISTRIBUTION_ID }} -- paths "/container/latest/index.html"
-	env:
+	      env:
           AWS_EC2_METADATA_DISABLED: 'true'
           ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
