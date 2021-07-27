@@ -1,11 +1,18 @@
 import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
 import MarketingApp from './components/MarketingApp';
+import Header from './components/Header';
 
 
 export default () => {
-  return <div>
-    <h1>Hi therseeee!!!!!!!!!</h1>
-    <hr />
-    <MarketingApp />
-  </div>
+  return (
+    <BrowserRouter>
+      <div>
+      {/* <h1>Hi therseeee!!!!!!!!!</h1>
+      <hr /> */}
+      <Header />
+      <MarketingApp />
+      </div>
+    </BrowserRouter>
+  )
 };
