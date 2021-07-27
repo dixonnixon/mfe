@@ -20,7 +20,7 @@ jobs:
       # - run: npm install
       # - run: npm run build
       # - run: echo "${HOME}/.local/bin" >> $GITHUB_PATH
-      - run: echo "${secrets}"
+      - run: echo "${{ secrets.PRODUCTION_DOMAIN }}"
 
       #   env:
       #     ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
